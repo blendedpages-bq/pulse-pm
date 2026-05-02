@@ -217,3 +217,159 @@ nav {
 .week-card.complete { border-left: 3px solid var(--teal); }
 .week-card.active   { border-left: 3px solid var(--amber); }
 .
+
+/* ── SPACING FIXES ── */
+.hero-section { padding-bottom: 0; }
+.stat-grid { margin-bottom: 0; }
+.body-text + .body-text { margin-top: 16px; }
+
+/* ── WEEK CARD LAYOUT FIX ── */
+.week-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 18px;
+  flex-wrap: wrap;
+}
+.week-num { flex-shrink: 0; }
+.badge { flex-shrink: 0; }
+.week-title { flex: 1; min-width: 200px; }
+.week-dates { flex-shrink: 0; font-size: 10px; color: var(--silver); font-family: var(--mono); }
+.week-body { padding: 12px 18px 16px; border-top: 0.5px solid var(--border); }
+.week-desc { margin-bottom: 12px; }
+.output-tag { margin: 2px; }
+
+/* ── TWO COL LIST FIX ── */
+.two-col-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 40px;
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+.two-col-list li {
+  padding-left: 14px;
+  position: relative;
+  font-size: 13px;
+  color: var(--silver);
+  line-height: 1.6;
+}
+.two-col-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+/* ── CAREER TIMELINE FIX ── */
+.career-entry {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 24px;
+  padding: 28px 0;
+  border-bottom: 0.5px solid var(--border);
+}
+.career-entry:last-child { border-bottom: none; }
+.career-years {
+  font-size: 11px;
+  font-family: var(--mono);
+  color: var(--amber);
+  padding-top: 4px;
+}
+.career-role {
+  font-size: 15px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 2px;
+}
+.career-company {
+  font-size: 12px;
+  color: var(--teal);
+  letter-spacing: 0.08em;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+.career-desc {
+  font-size: 13px;
+  color: var(--silver);
+  line-height: 1.7;
+}
+
+/* ── CREDENTIALS GRID FIX ── */
+.cred-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 24px;
+}
+.cred-col-title {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 16px;
+  display: block;
+}
+.cred-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.cred-list li {
+  font-size: 13px;
+  color: var(--silver);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+.cred-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 7px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--teal);
+}
+
+/* ── PULL QUOTE FIX ── */
+.pull-quote {
+  text-align: center;
+  padding: 48px 0;
+  max-width: 700px;
+  margin: 0 auto;
+  border-top: 0.5px solid var(--border);
+  border-bottom: 0.5px solid var(--border);
+  margin-bottom: 48px;
+}
+.pull-quote p {
+  font-size: clamp(16px, 2vw, 22px);
+  color: var(--silver-light);
+  line-height: 1.6;
+  font-style: italic;
+}
+
+/* ── FOOTER FIX ── */
+footer {
+  border-top: 0.5px solid var(--border);
+  padding: 28px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .two-col-list { grid-template-columns: 1fr; }
+  .cred-grid { grid-template-columns: 1fr; }
+  .career-entry { grid-template-columns: 1fr; gap: 8px; }
+  .week-header { flex-direction: column; align-items: flex-start; }
+}
