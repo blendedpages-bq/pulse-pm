@@ -54,10 +54,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT I'M BUILDING */}
+      {/* WHAT I AM BUILDING */}
       <section className="section" style={{ paddingTop: 0 }}>
         <div className="container">
-          <h2 className="section-title">What I'm Building</h2>
+          <h2 className="section-title">What I am Building</h2>
           <p style={{
             fontSize: '15px',
             color: 'var(--silver)',
