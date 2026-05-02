@@ -373,3 +373,120 @@ footer {
   .career-entry { grid-template-columns: 1fr; gap: 8px; }
   .week-header { flex-direction: column; align-items: flex-start; }
 }
+
+/* ============================================================
+   PULSE PM — STYLING FIXES
+   ============================================================ */
+
+
+/* ----------------------------------------------------------
+   FIX 1: Home Page — gap between stat cards & "What I Am Building"
+   ---------------------------------------------------------- */
+   .stats-section,
+   .stat-cards,
+   [class*="stats"] {
+     margin-bottom: 0 !important;
+     padding-bottom: 0 !important;
+   }
+   
+   .what-building,
+   [class*="what-building"],
+   [class*="whatBuilding"] {
+     margin-top: 2rem !important;
+     padding-top: 2rem !important;
+   }
+   
+   
+   /* ----------------------------------------------------------
+      FIX 2: Home Page — "Follow the Build" section centering
+      ---------------------------------------------------------- */
+   .follow-build,
+   [class*="follow-build"],
+   [class*="followBuild"],
+   [class*="follow_build"] {
+     display: flex !important;
+     flex-direction: column !important;
+     align-items: center !important;
+     text-align: center !important;
+     margin-left: auto !important;
+     margin-right: auto !important;
+     max-width: 800px !important;
+   }
+   
+   .follow-build a,
+   [class*="follow-build"] a,
+   [class*="followBuild"] a {
+     margin-left: auto !important;
+     margin-right: auto !important;
+   }
+   
+   
+   /* ----------------------------------------------------------
+      FIX 3: Build Page — output tags running together (no spacing)
+      ---------------------------------------------------------- */
+   .output-tag,
+   [class*="output-tag"],
+   [class*="outputTag"],
+   .tag,
+   [class*="-tag"] {
+     display: inline-block !important;
+     margin: 0.25rem 0.35rem 0.25rem 0 !important;
+     white-space: nowrap !important;
+   }
+   
+   /* If tags are in a flex or inline container */
+   .tags,
+   .output-tags,
+   [class*="tags-container"],
+   [class*="tagsContainer"] {
+     display: flex !important;
+     flex-wrap: wrap !important;
+     gap: 0.4rem !important;
+     align-items: flex-start !important;
+   }
+   
+   
+   /* ----------------------------------------------------------
+      FIX 4: Build Page — too much gap between timeline & Extension Roadmap
+      ---------------------------------------------------------- */
+   .timeline,
+   [class*="timeline"] {
+     margin-bottom: 1.5rem !important;
+     padding-bottom: 0 !important;
+   }
+   
+   .extension-roadmap,
+   [class*="extension-roadmap"],
+   [class*="extensionRoadmap"] {
+     margin-top: 1.5rem !important;
+     padding-top: 0 !important;
+   }
+   
+   
+   /* ----------------------------------------------------------
+      FIX 5: About Page — career timeline & credentials grid spacing
+      ---------------------------------------------------------- */
+   .career-timeline,
+   [class*="career-timeline"],
+   [class*="careerTimeline"] {
+     margin-bottom: 2rem !important;
+   }
+   
+   .credentials-grid,
+   [class*="credentials-grid"],
+   [class*="credentialsGrid"],
+   [class*="credentials"] {
+     display: grid !important;
+     gap: 1.5rem !important;
+     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)) !important;
+   }
+   
+   /* Career timeline item spacing */
+   .career-timeline li,
+   .career-timeline > *,
+   [class*="career-timeline"] > *,
+   [class*="timeline-item"] {
+     margin-bottom: 1.25rem !important;
+   }
+   
+   /* ============================================================ */
