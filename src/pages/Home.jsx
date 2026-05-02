@@ -4,7 +4,7 @@ export default function Home() {
       <section className="section hero-section">
         <div className="container">
           <p className="section-label">
-            Mortgage Servicing · AI Systems · Built in Public
+            Mortgage Servicing - AI Systems - Built in Public
           </p>
           <h1 className="section-title hero-title">
             A Compliance-Aware AI Framework for Mortgage Servicing Operations.
@@ -17,13 +17,17 @@ export default function Home() {
             workflows documented publicly, one week at a time.
           </p>
           <div className="btn-row">
-            <a href="/build" className="btn-primary">Follow the Build</a>
+            <a href="/build" className="btn-primary">
+              Follow the Build
+            </a>
             
-              href="https://www.linkedin.com/in/jarret-hayes-product-owner/"
+              <a href="https://www.linkedin.com/in/jarret-hayes-product-owner/"
               target="_blank"
               rel="noreferrer"
               className="btn-secondary"
-            >Connect on LinkedIn</a>
+            >
+              Connect on LinkedIn
+            </a>
           </div>
           <div className="stat-grid">
             <div className="stat-card">
@@ -41,7 +45,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="section">
         <div className="container">
           <h2 className="section-title">What I Am Building</h2>
@@ -61,7 +64,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       <section className="section section-alt">
         <div className="container">
           <h2 className="section-title">Extension Roadmap</h2>
@@ -87,7 +89,6 @@ export default function Home() {
           </p>
         </div>
       </section>
-
       <section className="section">
         <div className="container">
           <h2 className="section-title">Why This Matters</h2>
@@ -98,7 +99,7 @@ export default function Home() {
                 Mortgage servicing AI built by someone who configured MSP,
                 designed the workflows, governed the backlogs, and operated
                 inside the compliance constraints. Domain expertise is not the
-                context for this work it is the foundation of it.
+                context for this work. It is the foundation of it.
               </p>
             </div>
             <div className="card">
@@ -113,7 +114,7 @@ export default function Home() {
             <div className="card">
               <h3 className="card-title">Built in Public</h3>
               <p className="card-body">
-                Every week of the build is documented decisions made, outputs
+                Every week of the build is documented. Decisions made, outputs
                 produced, problems encountered, and lessons applied. The process
                 is as important as the product.
               </p>
@@ -121,7 +122,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <section className="section section-center">
         <div className="container">
           <h2 className="section-title">Follow the Build</h2>

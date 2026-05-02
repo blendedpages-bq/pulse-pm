@@ -149,7 +149,7 @@ export default function About() {
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/build" className="btn-primary">Follow the Build</a>
               
-                href="https://www.linkedin.com/in/jarret-hayes-product-owner/"
+                <a href="https://www.linkedin.com/in/jarret-hayes-product-owner/"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-secondary"
