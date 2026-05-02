@@ -25,6 +25,12 @@ export default function Build() {
             FHA Loss Mitigation AI Framework — 13 weeks, built in public.
             Every decision documented. Every output named.
           </p>
+          {/* ← ADD HERE */}
+          <p className="build-value-statement">
+            Built to demonstrate what a compliance-aware AI system looks like when it's 
+            designed by someone who has spent 20 years operating inside the system it's 
+            meant to serve.
+          </p>
           <div className="timeline">
             {weeks.map(w => (
               <div key={w.num} className={"week-card " + w.status}>
