@@ -1,7 +1,6 @@
 export default function Home() {
   return (
     <main>
-      {/* HERO */}
       <section className="section" style={{ paddingTop: '100px' }}>
         <div className="container">
           <p className="section-label">
@@ -22,7 +21,7 @@ export default function Home() {
             years of operational and technical experience across the full
             servicing lifecycle. Currently designing and building a
             compliance-aware RAG framework for regulated mortgage servicing
-            workflows — documented publicly, one week at a time.
+            workflows documented publicly, one week at a time.
           </p>
           <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
             <a href="/build" className="btn-primary">Follow the Build</a>
@@ -35,8 +34,6 @@ export default function Home() {
               Connect on LinkedIn
             </a>
           </div>
-
-          {/* STAT CARDS */}
           <div className="stat-grid">
             <div className="stat-card">
               <div className="stat-label">Progress</div>
@@ -54,10 +51,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT I AM BUILDING */}
-      <section className="section" style={{ paddingTop: 0 }}>
+      <section className="section" style={{ paddingTop: '0' }}>
         <div className="container">
-          <h2 className="section-title">What I am Building</h2>
+          <h2 className="section-title">What I Am Building</h2>
           <p style={{
             fontSize: '15px',
             color: 'var(--silver)',
@@ -69,7 +65,7 @@ export default function Home() {
             for regulated mortgage servicing operations. The framework retrieves
             policy guidance from indexed source documents, generates cited
             answers traceable to source, and flags edge cases for mandatory
-            human review — with auditability and compliance constraints as first
+            human review with auditability and compliance constraints as first
             principles, not afterthoughts.
           </p>
           <p style={{
@@ -86,8 +82,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* EXTENSION ROADMAP */}
-      <section className="section" style={{ background: 'rgba(255,255,255,0.02)', paddingTop: '60px', paddingBottom: '60px' }}>
+      <section className="section" style={{
+        background: 'rgba(255,255,255,0.02)',
+        paddingTop: '60px',
+        paddingBottom: '60px'
+      }}>
         <div className="container">
           <h2 className="section-title">Extension Roadmap</h2>
           <p style={{
@@ -123,7 +122,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY THIS MATTERS */}
       <section className="section">
         <div className="container">
           <h2 className="section-title">Why This Matters</h2>
@@ -139,7 +137,7 @@ export default function Home() {
                 Mortgage servicing AI built by someone who configured MSP,
                 designed the workflows, governed the backlogs, and operated
                 inside the compliance constraints. Domain expertise is not the
-                context for this work — it is the foundation of it.
+                context for this work it is the foundation of it.
               </p>
             </div>
             <div className="card">
@@ -164,7 +162,7 @@ export default function Home() {
                 marginBottom: '12px'
               }}>Built in Public</h3>
               <p style={{ fontSize: '13px', color: 'var(--silver)', lineHeight: 1.7 }}>
-                Every week of the build is documented — decisions made, outputs
+                Every week of the build is documented decisions made, outputs
                 produced, problems encountered, and lessons applied. The process
                 is as important as the product.
               </p>
@@ -173,7 +171,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* FOLLOW THE BUILD */}
       <section className="section" style={{
         textAlign: 'center',
         paddingTop: '60px',
@@ -188,4 +185,12 @@ export default function Home() {
             margin: '0 auto 32px',
             fontWeight: 300
           }}>
-            The full
+            The full 13-week build is documented on The Build page week by
+            week, output by output. Updated as each phase is completed.
+          </p>
+          <a href="/build" className="btn-primary">View the Full Build</a>
+        </div>
+      </section>
+    </main>
+  )
+}
