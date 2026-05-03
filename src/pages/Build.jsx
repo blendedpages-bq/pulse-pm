@@ -5,14 +5,21 @@ const weeks = [
   { num: 4, status: 'planned', dates: 'May 8 - May 14, 2026', title: 'Simple UI and output refinement' },
   { num: 5, status: 'planned', dates: 'May 15 - May 21, 2026', title: 'Scenario classification and routing' },
   { num: 6, status: 'planned', dates: 'May 22 - May 28, 2026', title: 'Hybrid retrieval and reranking' },
-  { num: 7, status: 'planned', dates: 'May 29 - Jun 4, 2026', title: 'Evaluation metrics and hallucination scoring' },
-  { num: 8, status: 'planned', dates: 'Jun 5 - Jun 11, 2026', title: 'Structured outputs and audit logging' },
-  { num: 9, status: 'planned', dates: 'Jun 12 - Jun 18, 2026', title: 'Compliance validation and guardrails' },
-  { num: 10, status: 'planned', dates: 'Jun 19 - Jun 25, 2026', title: 'Human-in-the-loop and escalation logic' },
-  { num: 11, status: 'planned', dates: 'Jun 26 - Jul 2, 2026', title: 'Training content and job aid generation' },
-  { num: 12, status: 'planned', dates: 'Jul 3 - Jul 9, 2026', title: 'Full copilot simulation and end-to-end flow' },
-  { num: 13, status: 'planned', dates: 'Jul 10 - Jul 16, 2026', title: 'Refactor, package, and portfolio delivery' }
-]
+  { num: 7, status: 'planned', dates: 'May 29 - Jun 4, 2026', title: 'Applied architecture research — Hyland Inspire 2025', desc: 'Attending Hyland Inspire to evaluate enterprise-grade content intelligence architecture against the patterns being built in this framework. Focus areas: agentic case management, GraphRAG and Knowledge Discovery, IDP document classification, context engineering, and AI governance in regulated environments. Research is not FHA-specific — findings apply across any corpus-driven, compliance-bound decision support use case.', outputs: ['Hyland Inspire session materials and reference content',
+  'GraphRAG and Knowledge Discovery architecture notes',
+  'Context engineering and Enterprise Context Engine concepts',
+  'Agentic case management pattern reference',
+  'AI governance framework observations',
+  'Financial services peer connections']},
+  { num: 8, status: 'planned', dates: 'Jun 5 - Jun 11, 2026', title: 'Evaluation metrics and hallucination scoring' },
+  { num: 9, status: 'planned', dates: 'Jun 12 - Jun 18, 2026', title: 'Structured outputs and audit logging' },
+  { num: 10, status: 'planned', dates: 'Jun 19 - Jun 25, 2026', title: 'Compliance validation and guardrails' },
+  { num: 11, status: 'planned', dates: 'Jun 26 - Jul 2, 2026', title: 'Human-in-the-loop and escalation logic' },
+  { num: 12, status: 'planned', dates: 'Jul 3 - Jul 9, 2026', title: 'Scheduled break — build resumes Jul 10', desc: 'Planned time away from active development. No deliverables scheduled this week.'},
+  { num: 13, status: 'planned', dates: 'Jul 10 - Jul 16, 2026', title: 'Training content and job aid generation' },
+  { num: 14, status: 'planned', dates: 'Jul 17 - Jul 23, 2026', title: 'Full copilot simulation and end-to-end flow' },
+  { num: 15, status: 'planned', dates: 'Jul 24 - Jul 30, 2026', title: 'Refactor, package, and portfolio delivery' }
+
 
 export default function Build() {
   return (
@@ -22,7 +29,7 @@ export default function Build() {
           <p className="section-label">Built in Public</p>
           <h1 className="section-title">The Build</h1>
           <p className="section-sub">
-            FHA Loss Mitigation AI Framework — 13 weeks, built in public.
+            FHA Loss Mitigation AI Framework — 15 weeks, built in public.
             Every decision documented. Every output named.
           </p>
           {/* ← ADD HERE */}
