@@ -19,7 +19,7 @@ const weeks = [
   { num: 13, status: 'planned', dates: 'Jul 10 - Jul 16, 2026', title: 'Training content and job aid generation' },
   { num: 14, status: 'planned', dates: 'Jul 17 - Jul 23, 2026', title: 'Full copilot simulation and end-to-end flow' },
   { num: 15, status: 'planned', dates: 'Jul 24 - Jul 30, 2026', title: 'Refactor, package, and portfolio delivery' }
-
+]
 
 export default function Build() {
   return (
