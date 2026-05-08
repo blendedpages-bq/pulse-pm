@@ -216,7 +216,7 @@ nav {
 
 .week-card.complete { border-left: 3px solid var(--teal); }
 .week-card.active   { border-left: 3px solid var(--amber); }
-.
+
 
 /* ── SPACING FIXES ── */
 .hero-section { padding-bottom: 0; }
@@ -224,6 +224,9 @@ nav {
 .body-text + .body-text { margin-top: 16px; }
 
 /* ── WEEK CARD LAYOUT FIX ── */
+.week-card {
+  margin-bottom: 1rem;
+}
 .week-header {
   display: flex;
   align-items: center;
