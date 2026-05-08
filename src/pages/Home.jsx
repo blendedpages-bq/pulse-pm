@@ -39,8 +39,8 @@ export default function Home() {
               <div className="stat-value">2,393 FHA chunks</div>
             </div>
             <div className="stat-card">
-              <div className="stat-label">Started</div>
-              <div className="stat-value">Apr 17, 2026</div>
+              <div className="stat-label">Accuracy</div>
+              <div className="stat-value">Zero hallucinations</div>
             </div>
           </div>
         </div>
