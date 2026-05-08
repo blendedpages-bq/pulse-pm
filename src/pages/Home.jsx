@@ -32,7 +32,7 @@ export default function Home() {
           <div className="stat-grid">
             <div className="stat-card">
               <div className="stat-label">Progress</div>
-              <div className="stat-value">Week 3 of 15</div>
+              <div className="stat-value">Week 4 of 15</div>
             </div>
             <div className="stat-card">
               <div className="stat-label">Indexed</div>
