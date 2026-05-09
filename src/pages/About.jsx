@@ -62,7 +62,7 @@ export default function About() {
         <div className="container">
 
           <p className="section-label">
-            20 years building mortgage servicing systems. Now building the AI layer.
+            20 years building mortgage servicing systems. Researching the next intelligence layer.
           </p>
           <h1 className="section-title">About</h1>
 

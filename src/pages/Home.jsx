@@ -7,12 +7,12 @@ export default function Home() {
             Mortgage Servicing - AI Systems - Built in Public
           </p>
           <h1 className="section-title hero-title">
-            A Compliance-Aware AI Framework for Mortgage Servicing Operations.
+            Independent Research in Compliance-Aware AI for Mortgage Servicing.
           </h1>
           <p className="hero-sub">
             Jarret Hayes is a mortgage servicing systems professional with 20
             years of operational and technical experience across the full
-            servicing lifecycle. Currently designing and building a
+            servicing lifecycle. Independently researching and building a
             compliance-aware RAG framework for regulated mortgage servicing
             workflows documented publicly, one week at a time.
           </p>
