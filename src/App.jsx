@@ -25,6 +25,11 @@ function Footer() {
         <p className="footer-text">
           Pulse Product Management — Operational Intelligence Under Control
         </p>
+        <p className="footer-disclaimer">
+          All work documented on this site is conducted independently on personal 
+          time using personal accounts and public source documents. Not affiliated 
+          with or endorsed by any current or former employer.
+        </p>
       </div>
     </footer>
   )
