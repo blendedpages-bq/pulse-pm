@@ -21,7 +21,7 @@ const career = [
     years: '2023 – Present',
     role: 'Process Optimization Analyst / Product Owner',
     company: 'Primary Residential Mortgage',
-    desc: 'Leads data product ownership, KPI framework development, financial tracking and forecasting, and AI-assisted workflow design across regulated servicing operations. Conducts structured vendor evaluation and market analysis to assess third-party platform capabilities. Directed loss draft and property preservation modernization increasing productivity 89% and reducing labor hours 23%. Built OKR-based portfolio governance and executive analytics infrastructure for VP-level decision support. Currently designing and building a compliance-aware AI RAG framework for FHA loss mitigation.'
+    desc: 'Leads data product ownership, KPI framework development, financial tracking and forecasting, and AI-assisted workflow design across regulated servicing operations. Conducts structured vendor evaluation and market analysis to assess third-party platform capabilities. Directed loss draft and property preservation modernization increasing productivity 89% and reducing labor hours 23%. Built OKR-based portfolio governance and executive analytics infrastructure for VP-level decision support.'
   }
 ]
 
