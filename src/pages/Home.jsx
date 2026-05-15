@@ -36,7 +36,7 @@ export default function Home() {
             </div>
             <div className="stat-card">
               <div className="stat-label">Indexed</div>
-              <div className="stat-value">2,393 FHA chunks</div>
+              <div className="stat-value">2,676 FHA chunks</div>
             </div>
             <div className="stat-card">
               <div className="stat-label">Accuracy</div>
