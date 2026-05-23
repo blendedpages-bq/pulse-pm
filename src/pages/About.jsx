@@ -1,15 +1,9 @@
 const career = [
   {
-    years: '2002 – 2019',
-    role: 'Lead Default Operations Specialist',
-    company: 'Utah Housing Corp',
-    desc: 'Progressive leadership across collections, loss mitigation, foreclosure, post-sale claims, and property preservation. Built evaluation frameworks and decision-support tools aligned with investor and regulatory guidelines. Reduced application review cycle time by 48% through Lean process redesign while sustaining volume growth and audit compliance.'
-  },
-  {
-    years: '2019 – 2022',
-    role: 'Product Owner / Business Systems Analyst',
+    years: '2023 – Present',
+    role: 'Process Optimization Analyst / Product Owner',
     company: 'Primary Residential Mortgage',
-    desc: 'Led enterprise platform modernization across core servicing, document management, and integrated vendor systems. Designed and governed product backlogs, sprint cycles, and release coordination across business and engineering teams. Developed escrow calculation models, standardized onboarding workflows, and conducted structured vendor evaluation and market analysis to support platform selection and implementation planning.'
+    desc: 'Leads data product ownership, KPI framework development, financial tracking and forecasting, and AI-assisted workflow design across regulated servicing operations. Conducts structured vendor evaluation and market analysis to assess third-party platform capabilities. Directed loss draft and property preservation modernization increasing productivity 89% and reducing labor hours 23%. Built OKR-based portfolio governance and executive analytics infrastructure for VP-level decision support.'
   },
   {
     years: '2022 – 2023',
@@ -18,11 +12,18 @@ const career = [
     desc: 'Led technology and operations in parallel across default servicing — engineering Azure DevOps delivery infrastructure, governing Agile release cycles, and directing modernization across loss mitigation, foreclosure, and claims operations. Conducted vendor vetting and market analysis to evaluate third-party platform capabilities. Compressed system deployment cycles from 90 days to under 30 while increasing operational throughput by 60%.'
   },
   {
-    years: '2023 – Present',
-    role: 'Process Optimization Analyst / Product Owner',
+    years: '2019 – 2022',
+    role: 'Product Owner / Business Systems Analyst',
     company: 'Primary Residential Mortgage',
-    desc: 'Leads data product ownership, KPI framework development, financial tracking and forecasting, and AI-assisted workflow design across regulated servicing operations. Conducts structured vendor evaluation and market analysis to assess third-party platform capabilities. Directed loss draft and property preservation modernization increasing productivity 89% and reducing labor hours 23%. Built OKR-based portfolio governance and executive analytics infrastructure for VP-level decision support.'
+    desc: 'Led enterprise platform modernization across core servicing, document management, and integrated vendor systems. Designed and governed product backlogs, sprint cycles, and release coordination across business and engineering teams. Developed escrow calculation models, standardized onboarding workflows, and conducted structured vendor evaluation and market analysis to support platform selection and implementation planning.'
+  },
+  {
+    years: '2002 – 2019',
+    role: 'Lead Default Operations Specialist',
+    company: 'Utah Housing Corp',
+    desc: 'Progressive leadership across collections, loss mitigation, foreclosure, post-sale claims, and property preservation. Built evaluation frameworks and decision-support tools aligned with investor and regulatory guidelines. Reduced application review cycle time by 48% through Lean process redesign while sustaining volume growth and audit compliance.'
   }
+
 ]
 
 const domain = [
