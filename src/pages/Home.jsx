@@ -20,8 +20,7 @@ export default function Home() {
             <a href="/build" className="btn-primary">
               Follow the Build
             </a>
-            
-              <a href="https://www.linkedin.com/in/jarret-hayes-product-owner/"
+            <a href="https://www.linkedin.com/in/jarrethayes"
               target="_blank"
               rel="noreferrer"
               className="btn-secondary"
@@ -32,7 +31,7 @@ export default function Home() {
           <div className="stat-grid">
             <div className="stat-card">
               <div className="stat-label">Progress</div>
-              <div className="stat-value">Week 8 of 16</div>
+              <div className="stat-value">Week 11 of 17</div>
             </div>
             <div className="stat-card">
               <div className="stat-label">Indexed</div>
@@ -126,7 +125,7 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title">Follow the Build</h2>
           <p className="hero-sub">
-            The full 15-week build is documented on The Build page week by
+            The full 17-week build is documented on The Build page week by
             week, output by output. Updated as each phase is completed.
           </p>
           <a href="/build" className="btn-primary">View the Full Build</a>
