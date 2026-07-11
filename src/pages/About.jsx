@@ -3,7 +3,7 @@ const career = [
     years: '2026 – Present',
     role: 'Mortgage Servicing Technology Manager',
     company: 'Primary Residential Mortgage',
-    desc: 'Leads a cross-functional technology organization across data engineering, business intelligence, system administration, and product management. Orchestrates delivery across UAT, SME, and communications analysts to align technology execution with servicing operations and compliance requirements.'
+    desc: 'Leads a cross-functional technology organization spanning data engineering, business intelligence, system administration, and product management — with direct accountability for delivery across UAT, SME, and communications analysts. Inherited and is restructuring a 10-person team into a unified operating model aligned to servicing operations and compliance requirements. Designed and facilitated an internal technology alignment program communicating strategic direction, role transitions, and professional development priorities across technology and operations teams.'
   },
   {
     years: '2023 – 2026',
