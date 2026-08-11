@@ -154,7 +154,7 @@ export default function About() {
               Connect
             </h2>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-              <a href="/build" className="btn-primary">Follow the Build</a>
+              <a href="/portfolio" className="btn-primary">View Portfolio</a>
               
                 <a href="https://www.linkedin.com/in/jarrethayes/"
                 target="_blank"
