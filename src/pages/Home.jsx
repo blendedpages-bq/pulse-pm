@@ -4,23 +4,24 @@ export default function Home() {
       <section className="section hero-section">
         <div className="container">
           <p className="section-label">
-            Mortgage Servicing - AI Systems - Built in Public
+            AI Systems Architecture — Built and Led in Public
           </p>
           <h1 className="section-title hero-title">
-            Independent Research in Compliance-Aware AI for Mortgage Servicing.
+            AI Systems Design for Regulated Operations.
           </h1>
           <p className="hero-sub">
-            Jarret Hayes is a mortgage servicing systems professional with 20
-            years of operational and technical experience across the full
-            servicing lifecycle. Independently researching and building a
-            compliance-aware RAG framework for regulated mortgage servicing
-            workflows — documented publicly, one iteration at a time.
+            Jarret Hayes is a mortgage servicing technology leader and AI systems
+            practitioner with 20 years of operational experience across the full
+            servicing lifecycle. This site documents independent research, active
+            AI builds, and perspectives on leading technology in regulated
+            environments — written from inside the work, not adjacent to it.
           </p>
           <div className="btn-row">
-            <a href="/build" className="btn-primary">
-              Follow the Build
+            <a href="/portfolio" className="btn-primary">
+              View Portfolio
             </a>
-            <a href="https://www.linkedin.com/in/jarrethayes"
+            
+              <a href="https://www.linkedin.com/in/jarrethayes"
               target="_blank"
               rel="noreferrer"
               className="btn-secondary"
@@ -44,51 +45,29 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="section">
         <div className="container">
-          <h2 className="section-title">What I Am Building</h2>
+          <h2 className="section-title">What This Is</h2>
           <p className="body-text">
-            A compliance-aware retrieval-augmented generation framework designed
-            for regulated mortgage servicing operations. The framework retrieves
-            policy guidance from indexed source documents, generates cited
-            answers traceable to source, and flags edge cases for mandatory
-            human review with auditability and compliance constraints as first
-            principles, not afterthoughts.
+            A professional practice site for AI product systems work in regulated
+            environments. The portfolio documents active and completed AI builds —
+            each framed as a product epic with a problem statement, objective,
+            build intent, and verified outcomes. Perspectives publishes articles
+            and frameworks on AI product leadership, compliance-aware systems
+            design, and developing technology teams.
           </p>
           <p className="body-text">
-            Current proof of concept: FHA loss mitigation policy retrieval and
-            decision support. Designed to extend across customer service
-            operations, regulatory change management, claims analysis, investor
-            reporting, and additional servicing workflow domains.
+            The current anchor project is an FHA loss mitigation AI triage
+            copilot — a compliance-aware retrieval-augmented generation system
+            built independently on public source documents and personal accounts.
+            Additional projects in regulated mortgage, consumer finance, and
+            creative domains are in planning.
           </p>
         </div>
       </section>
+
       <section className="section section-alt">
-        <div className="container">
-          <h2 className="section-title">Extension Roadmap</h2>
-          <p className="body-text">
-            The FHA loss mitigation pipeline is the first proof of concept.
-            The framework is designed to extend across the following servicing
-            domains as each module is validated.
-          </p>
-          <ul className="two-col-list">
-            <li>Regulatory change management and Mortgagee Letter analysis</li>
-            <li>Escrow analysis and exception management</li>
-            <li>Investor claims analysis and eligibility determination</li>
-            <li>Loss draft disbursement workflow support</li>
-            <li>Customer service call support and real-time policy retrieval</li>
-            <li>Servicing system configuration guidance</li>
-            <li>Credit and investor reporting compliance</li>
-            <li>Operational performance and KPI frameworks</li>
-          </ul>
-          <p className="muted-note">
-            Extension domains are sequenced after the core framework is
-            validated. No timelines are committed until the proof of concept
-            is complete.
-          </p>
-        </div>
-      </section>
-      <section className="section">
         <div className="container">
           <h2 className="section-title">Why This Matters</h2>
           <div className="card-grid">
@@ -121,15 +100,44 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="section">
+        <div className="container">
+          <h2 className="section-title">Active Work</h2>
+          <div className="card-grid">
+            <div className="card">
+              <p className="epic-label">Portfolio — Active</p>
+              <h3 className="card-title">FHA Loss Mitigation AI Triage Copilot</h3>
+              <p className="card-body">
+                A compliance-aware RAG system for FHA loss mitigation policy
+                retrieval and decision support. Phase 3 governance and compliance
+                validation in progress. 8 iterations complete.
+              </p>
+              <a href="/portfolio" className="card-link">View Build →</a>
+            </div>
+            <div className="card">
+              <p className="epic-label">Perspectives — Coming Soon</p>
+              <h3 className="card-title">AI Product Leadership in Regulated Environments</h3>
+              <p className="card-body">
+                Articles and frameworks on compliance-aware AI systems design,
+                scoping AI proofs of concept, and developing technology teams
+                that can deliver in regulated operations.
+              </p>
+              <a href="/perspectives" className="card-link">View Perspectives →</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="section section-center">
         <div className="container">
-          <h2 className="section-title">Follow the Build</h2>
+          <h2 className="section-title">Follow the Work</h2>
           <p className="hero-sub">
-            The FHA Loss Mitigation AI Framework is documented on The Build
-            page, iteration by iteration, output by output. Updated as each
-            phase is completed.
+            The portfolio and perspectives are updated as each iteration closes
+            and each article is published. Built in public means the gaps,
+            the pivots, and the decisions are all documented — not just the wins.
           </p>
-          <a href="/build" className="btn-primary">View the Full Build</a>
+          <a href="/portfolio" className="btn-primary">View Portfolio</a>
         </div>
       </section>
     </main>
