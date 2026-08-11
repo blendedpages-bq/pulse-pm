@@ -14,7 +14,7 @@ export default function Home() {
             years of operational and technical experience across the full
             servicing lifecycle. Independently researching and building a
             compliance-aware RAG framework for regulated mortgage servicing
-            workflows documented publicly, one week at a time.
+            workflows — documented publicly, one iteration at a time.
           </p>
           <div className="btn-row">
             <a href="/build" className="btn-primary">
@@ -30,12 +30,12 @@ export default function Home() {
           </div>
           <div className="stat-grid">
             <div className="stat-card">
-              <div className="stat-label">Progress</div>
-              <div className="stat-value">Week 12 of 17</div>
+              <div className="stat-label">Build Status</div>
+              <div className="stat-value">Phase 3 Active</div>
             </div>
             <div className="stat-card">
               <div className="stat-label">Indexed</div>
-              <div className="stat-value">2,676 FHA chunks</div>
+              <div className="stat-value">2,867 FHA chunks</div>
             </div>
             <div className="stat-card">
               <div className="stat-label">Accuracy</div>
@@ -113,9 +113,9 @@ export default function Home() {
             <div className="card">
               <h3 className="card-title">Built in Public</h3>
               <p className="card-body">
-                Every week of the build is documented. Decisions made, outputs
-                produced, problems encountered, and lessons applied. The process
-                is as important as the product.
+                Every iteration of the build is documented. Decisions made,
+                outputs produced, problems encountered, and lessons applied.
+                The process is as important as the product.
               </p>
             </div>
           </div>
@@ -125,8 +125,9 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title">Follow the Build</h2>
           <p className="hero-sub">
-            The full 17-week build is documented on The Build page week by
-            week, output by output. Updated as each phase is completed.
+            The FHA Loss Mitigation AI Framework is documented on The Build
+            page, iteration by iteration, output by output. Updated as each
+            phase is completed.
           </p>
           <a href="/build" className="btn-primary">View the Full Build</a>
         </div>
