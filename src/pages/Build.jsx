@@ -10,6 +10,8 @@ const weeks = [
   { num: 9, status: 'active', title: 'Retrieval precedence and audit logging', desc: 'Implementing retrieval precedence-awareness so higher-priority sources cannot be displaced by lower-priority chunks without a score threshold — closing the gap confirmed in Decision 19. Regression-testing the precedence fix against all four canonical scenarios in s1_s4_w11_rescore.json. Building immutable audit logging before output delivery — a non-negotiable gate in the original Phase 3 design. Decision 24 defines what immutable means concretely before code is written.', outputs: ['retrieve_hybrid.py — precedence-aware reranking', 'audit_logger.py — immutable pre-output log', 'Decision 24 — immutable audit log definition', 'S1-S4 regression pass — precedence fix verified'], wip: true }
 ]
 
+
+
 export default function Build() {
   return (
     <main>
@@ -26,6 +28,63 @@ export default function Build() {
             designed by someone who has spent 20 years operating inside the system it's 
             meant to serve.
           </p>
+          <div className="epic-block">
+  <p className="epic-label">EPIC</p>
+  <h2 className="epic-title">FHA Loss Mitigation AI Triage Copilot</h2>
+
+  <div className="epic-section">
+    <h3 className="epic-section-title">Problem Statement</h3>
+    <p className="epic-body">
+      FHA loss mitigation decisions are governed by a complex, frequently updated 
+      policy framework spanning the HUD Handbook, active Mortgagee Letters, CFPB 
+      regulations, and Ginnie Mae guidelines. Servicers must evaluate borrower 
+      eligibility, engagement evidence, hardship type, and payment capacity against 
+      this framework — often under time pressure, with incomplete documentation, and 
+      without a reliable way to verify that the guidance being applied is current and 
+      correctly cited. Errors create compliance exposure, claim denials, and borrower 
+      harm.
+    </p>
+  </div>
+
+  <div className="epic-section">
+    <h3 className="epic-section-title">Objective</h3>
+    <p className="epic-body">
+      Design and build a compliance-aware retrieval-augmented generation system that 
+      retrieves policy guidance from indexed source documents, generates cited answers 
+      traceable to source, enforces borrower engagement validation before any path 
+      recommendation is made, flags downstream compliance constraints, and requires 
+      human review before any recommendation is acted on. Auditability and compliance 
+      are first principles, not features added at the end.
+    </p>
+  </div>
+
+  <div className="epic-section">
+    <h3 className="epic-section-title">Build Intent</h3>
+    <p className="epic-body">
+      This system was not built to become a production deployment. It was built because 
+      understanding how AI systems fail in regulated environments requires more than 
+      reading about them. Every architectural decision, every retrieval gap, every 
+      compliance constraint encountered during this build produced judgment that cannot 
+      be developed any other way. An AI Product Manager who has personally wired an 
+      engagement validation gate, debugged a fallback trigger, and scored hallucination 
+      risk against a compliance rubric brings something fundamentally different to AI 
+      product decisions than one who has only managed vendors who did those things.
+    </p>
+  </div>
+
+  <div className="epic-section">
+    <h3 className="epic-section-title">Outcome</h3>
+    <p className="epic-body">
+      A working AI triage copilot with a verified retrieval pipeline, rules-based 
+      classification, prompt routing, engagement validation gate, and constraint 
+      flagging — scored against a 5-dimension evaluation rubric across 4 canonical 
+      scenarios. Zero hallucinations maintained across all test scenarios. Engagement 
+      Gateway Enforcement moved from 0.0 to 1.0 across all three previously 
+      auto-blocked scenarios following gate wiring in Iteration 8. Retrieval 
+      precedence-awareness and immutable audit logging are the active build targets.
+    </p>
+  </div>
+</div>
           <div className="timeline">
             {weeks.map(w => (
               <div key={w.num} className={"week-card " + w.status}>

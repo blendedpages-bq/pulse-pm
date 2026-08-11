@@ -567,3 +567,55 @@ footer {
   margin-right: auto;
   line-height: 1.6;
 }
+/* ----------------------------------------------------------
+   Build Page — Epic Block
+   ---------------------------------------------------------- */
+   .epic-block {
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-left: 3px solid var(--gold, #c9a84c);
+    border-radius: 8px;
+    padding: 2rem 2.5rem;
+    margin: 2rem 0 3rem 0;
+    background: rgba(255, 255, 255, 0.02);
+  }
+  
+  .epic-label {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold, #c9a84c);
+    margin-bottom: 0.5rem;
+  }
+  
+  .epic-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--white, #e8e6dc);
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  }
+  
+  .epic-section {
+    margin-bottom: 1.75rem;
+  }
+  
+  .epic-section:last-child {
+    margin-bottom: 0;
+  }
+  
+  .epic-section-title {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--teal, #1D9E75);
+    margin-bottom: 0.6rem;
+    text-transform: uppercase;
+  }
+  
+  .epic-body {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: var(--silver, #9f9d95);
+    max-width: 760px;
+  }
