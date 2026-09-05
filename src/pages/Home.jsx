@@ -16,12 +16,15 @@ export default function Home() {
             AI builds, and perspectives on leading technology in regulated
             environments — written from inside the work, not adjacent to it.
           </p>
+          
           <div className="btn-row">
             <a href="/portfolio" className="btn-primary">
               View Portfolio
             </a>
             
-              <a href="https://www.linkedin.com/in/jarrethayes"
+              <a 
+              
+              href="https://www.linkedin.com/in/jarrethayes"
               target="_blank"
               rel="noreferrer"
               className="btn-secondary"
@@ -29,6 +32,7 @@ export default function Home() {
               Connect on LinkedIn
             </a>
           </div>
+
           <div className="stat-grid">
             <div className="stat-card">
               <div className="stat-label">Build Status</div>
@@ -111,7 +115,7 @@ export default function Home() {
               <p className="card-body">
                 A compliance-aware RAG system for FHA loss mitigation policy
                 retrieval and decision support. Phase 3 governance and compliance
-                validation in progress. 8 iterations complete.
+                validation in progress. 9 iterations complete.
               </p>
               <a href="/portfolio" className="card-link">View Build →</a>
             </div>
