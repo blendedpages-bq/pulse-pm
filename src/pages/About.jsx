@@ -3,22 +3,28 @@ const career = [
     years: '2026 – Present',
     role: 'Mortgage Servicing Technology Manager',
     company: 'Primary Residential Mortgage',
-    desc: 'Leads a cross-functional technology organization spanning data engineering, business intelligence, system administration, and product management — with direct accountability for delivery across UAT, SME, and communications analysts. Inherited and is restructuring a 10-person team into a unified operating model aligned to servicing operations and compliance requirements. Designed and facilitated an internal technology alignment program communicating strategic direction, role transitions, and professional development priorities across technology and operations teams.'
+    desc: 'Leads a cross-functional technology organization spanning data engineering, business intelligence, system administration, and product management within regulated servicing operations. Consolidated separate technology functions into a single delivery team operating in sprints, with shared ownership across architecture, platform administration, and product. Accountable for delivery governance and for aligning the technology operating model to servicing operations and compliance requirements.'
   },
   {
     years: '2023 – 2026',
     role: 'Process Optimization Analyst / Product Owner',
     company: 'Primary Residential Mortgage',
-    desc: 'Leads data product ownership, KPI framework development, financial tracking and forecasting, and AI-assisted workflow design across regulated servicing operations. Conducts structured vendor evaluation and market analysis to assess third-party platform capabilities. Directed loss draft and property preservation modernization increasing productivity 89% and reducing labor hours 23%. Built OKR-based portfolio governance and executive analytics infrastructure for VP-level decision support.'
+    desc: 'Led data product ownership, KPI framework development, financial tracking and forecasting, and workflow architecture supporting AI readiness across regulated servicing operations. Conducted structured vendor evaluation and market analysis to assess third-party platform capabilities. Directed loss draft and property preservation modernization, building cross-functional alignment across operations, vendor management, and technology to move a long-recognized problem into delivery, increasing productivity 89% and reducing labor hours 23%. Built OKR-based portfolio governance and executive analytics infrastructure for VP-level decision support.'
   },
   {
     years: '2022 – 2023',
     role: 'Director of Default and Loss Mitigation',
     company: 'Evergreen Home Loans',
-    desc: 'Led technology and operations in parallel across default servicing — engineering Azure DevOps delivery infrastructure, governing Agile release cycles, and directing modernization across loss mitigation, foreclosure, and claims operations. Conducted vendor vetting and market analysis to evaluate third-party platform capabilities. Compressed system deployment cycles from 90 days to under 30 while increasing operational throughput by 60%.'
+    desc: 'Led technology and operations in parallel across default servicing, directing modernization across loss mitigation, foreclosure, and claims operations and managing Agile release cycles. Reconciled investor claim expenses and identified recovery opportunities contributing to more than $2M in reimbursements. Compressed system deployment cycles from 90 days to under 30 while increasing operational throughput by 60%, by establishing structured release governance where none previously existed.'
   },
   {
-    years: '2019 – 2022',
+    years: '2021 – 2022',
+    role: 'Business Analyst / Product Owner',
+    company: 'Evergreen Home Loans',
+    desc: 'Designed and administered an Azure DevOps environment to centralize product governance, backlog management, and release sequencing across cross-functional delivery teams. Led end-to-end IVR system deployment, managing requirements discovery, user acceptance testing, and release validation within a regulated environment. Translated complex servicing and compliance requirements into structured user stories with ROI-aligned acceptance criteria.'
+  },
+  {
+    years: '2019 – 2021',
     role: 'Product Owner / Business Systems Analyst',
     company: 'Primary Residential Mortgage',
     desc: 'Led enterprise platform modernization across core servicing, document management, and integrated vendor systems. Designed and governed product backlogs, sprint cycles, and release coordination across business and engineering teams. Developed escrow calculation models, standardized onboarding workflows, and conducted structured vendor evaluation and market analysis to support platform selection and implementation planning.'
@@ -33,7 +39,7 @@ const career = [
 ]
 
 const domain = [
-  'MSP servicing system configuration',
+  'Core servicing system configuration',
   'Azure DevOps environment design',
   'End-to-end workflow architecture',
   'Financial tracking and forecasting',
@@ -47,20 +53,39 @@ const domain = [
 ]
 
 const technical = [
-  'Python — data processing and pipeline design',
-  'Claude API — RAG framework development',
-  'PyMuPDF — PDF extraction and chunking',
-  'Power BI and Power Query',
-  'Excel — advanced financial modeling',
-  'Tableau',
-  'Azure DevOps — environment design and administration',
-  'MSP — core servicing system configuration',
-  'MS in Data Analytics, WGU 2024',
-  'BS in Business Management, WGU 2020',
-  'Certified Scrum Product Owner (CSPO)',
-  'PMI Agile Certified Practitioner (PMI-ACP)',
-  'Business Intelligence and Data Analyst (BIDA)'
+  {
+    group: 'Applied',
+    items: [
+      'Power BI and Power Query',
+      'Excel — advanced financial modeling',
+      'Azure DevOps — environment design and administration',
+      'Claude API — RAG system design and evaluation'
+    ]
+  },
+  {
+    group: 'Academic foundation',
+    items: [
+      'MS in Data Analytics, WGU 2024 — Python, regression analysis, Tableau',
+      'BS in Business Management, WGU 2020'
+    ]
+  },
+  {
+    group: 'Certifications',
+    items: [
+      'Certified Scrum Product Owner (CSPO)',
+      'PMI Agile Certified Practitioner (PMI-ACP)',
+      'Business Intelligence and Data Analyst (BIDA)'
+    ]
+  }
 ]
+
+const groupLabelStyle = {
+  fontSize: '12px',
+  color: 'var(--silver)',
+  opacity: 0.55,
+  marginBottom: '8px',
+  fontWeight: 400
+}
 
 export default function About() {
   return (
@@ -69,7 +94,7 @@ export default function About() {
         <div className="container">
 
           <p className="section-label">
-            20 years building mortgage servicing systems. Researching the next intelligence layer.
+            24 years inside mortgage servicing operations. Now designing the AI systems for them.
           </p>
           <h1 className="section-title">About</h1>
 
@@ -82,19 +107,18 @@ export default function About() {
             marginBottom: '64px',
             fontWeight: 300
           }}>
-            Jarret Hayes is a mortgage servicing systems professional, product
-            owner, and AI systems builder based in Salt Lake City, Utah. Over
-            two decades of progressive experience spans the full mortgage
-            servicing lifecycle — including MSP system configuration, Azure
-            DevOps delivery infrastructure, end-to-end workflow design,
-            financial tracking and forecasting, investor and credit reporting,
-            escrow operations, loss mitigation, loss drafts, foreclosure,
-            claims reconciliation, vendor management and market analysis, and
-            operational performance management through OKR and KPI frameworks.
-            That depth of operational and systems experience forms the
-            foundation of current work: designing and building
-            compliance-aware AI systems for regulated mortgage servicing
-            environments.
+            Jarret Hayes is a mortgage servicing technology leader based in Salt
+            Lake City, Utah. Twenty-four years of progressive experience spans the
+            full mortgage servicing lifecycle, including core servicing system
+            configuration, Azure DevOps delivery infrastructure, end-to-end
+            workflow design, financial tracking and forecasting, investor and
+            credit reporting, escrow operations, loss mitigation, loss drafts,
+            foreclosure, claims reconciliation, vendor management and market
+            analysis, and operational performance management through OKR and KPI
+            frameworks. That operational and systems depth is the foundation of
+            current work: an independent build of a compliance-aware AI system for
+            FHA loss mitigation, designed and documented in public, iteration by
+            iteration.
           </p>
 
           {/* CAREER */}
@@ -130,16 +154,21 @@ export default function About() {
             </div>
             <div>
               <div className="cred-col-title">Technical and Academic</div>
-              <ul className="cred-list">
-                {technical.map((t, i) => <li key={i}>{t}</li>)}
-              </ul>
+              {technical.map((g, i) => (
+                <div key={i} style={{ marginBottom: i < technical.length - 1 ? '28px' : '0' }}>
+                  <div style={groupLabelStyle}>{g.group}</div>
+                  <ul className="cred-list">
+                    {g.items.map((t, j) => <li key={j}>{t}</li>)}
+                  </ul>
+                </div>
+              ))}
             </div>
           </div>
 
           {/* PULL QUOTE */}
           <div className="pull-quote">
             <p>
-              "Two decades configuring, operating, and modernizing mortgage
+              "Twenty-four years configuring, operating, and modernizing mortgage
               servicing systems is not a credential adjacent to this work.
               It is the work."
             </p>
@@ -155,8 +184,8 @@ export default function About() {
             </h2>
             <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
               <a href="/portfolio" className="btn-primary">View Portfolio</a>
-              
-                <a href="https://www.linkedin.com/in/jarrethayes/"
+
+                <a href="https://www.linkedin.com/in/jarrethayes"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-secondary"

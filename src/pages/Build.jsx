@@ -1,14 +1,70 @@
 const weeks = [
-  { num: 1, status: 'complete', title: 'Use case definition and scope', desc: 'Defined the operational problem, inputs, outputs, risks, and MVP boundaries before writing a single line of code. Established the decision framework: what the system must retrieve, what it must generate, what it must refuse, and where human review is mandatory.', outputs: ['System definition document', 'Input and output specification', 'Risk register', 'MVP boundary document'] },
-  { num: 2, status: 'complete', title: 'PDF extraction and retrieval pipeline', desc: 'Extracted and chunked FHA Handbook and Mortgagee Letters using PyMuPDF. Built TF-IDF retrieval returning top-5 ranked policy matches with document source, page number, section ID, and relevance score. Reduced unknown chunks from 83 to 52 after skip logic refinement.', outputs: ['2,393 FHA chunks indexed', 'Python retrieval pipeline', 'Chunk registry', 'Retrieval evaluation CSV'] },
-  { num: 3, status: 'complete', title: 'Prompt design and answer generation', desc: 'Built compliance-safe prompt templates for the Claude API with citation enforcement and insufficient-info fallback behavior. Wired retrieval pipeline into generate.py and output_wrapper.py returning schema-compliant JSON. Ran 3 test scenarios — 11/11 citations verified, zero hallucinations across all test cases. Resolved model string deprecation and field name mismatch between retrieval and generation layers. Key finding: broad question terminology significantly outperforms narrow queries on retrieval scores.', outputs: ['prompts/rag_answer_v1.txt', 'generate.py', 'output_wrapper.py', '11/11 citations verified', 'Zero hallucinations — 3 test scenarios', 'DECISIONS.md — 4 architecture decisions', 'ExperimentLog — 5 entries logged'] },
-  { num: 4, status: 'complete', title: 'Simple UI and output refinement', desc: 'Built a demo-ready Streamlit interface allowing non-technical users to submit FHA policy questions and receive clean, cited answers through a browser UI. Refactored output_wrapper.py with inline citation stripping, section ID cleaning, and reason extraction. Expanded corpus from 2 to 5 documents. Ran 3 demo scenarios — 1 full pass with citations, 2 insufficient-info returns correctly triggered. Q2 and Q3 gaps logged as retrieval investigation targets. Terminology mismatch suspected on loan modification queries — FHA uses Standalone Loan Modification terminology.', outputs: ['Streamlit UI — local development build', 'rag_answer_v2.txt prompt template', 'output_wrapper.py refactored', 'app.py — browser UI', '2,676 FHA chunks across 5 documents', 'PROMPT_VERSION single-point version control', 'Timestamped experiment files', 'ExperimentLog — 5 entries logged'] },
-  { num: 5, status: 'complete', title: 'Scenario classification and prompt routing', desc: 'Built rules-based classification across four axes — hardship type, payment capacity, case status, and exceptions — wired directly into the generation pipeline. Deployed query_normalizer.py to resolve FHA terminology mismatches. Restructured output schema: path/answer/reason split into three distinct fields, each serving a single purpose. Light prompt routing live — forbearance cases route to a dedicated template. Zero hallucinations across all three demo scenarios.', outputs: ['query_normalizer.py — FHA terminology mapping', 'classify.py — 4-axis rules-based classifier', 'classification_rules.json', 'route_prompt() — light prompt routing', 'rag_answer_v3.txt — partial coverage handling', 'rag_answer_forbearance_v1.txt', 'output_wrapper.py — path/answer/reason schema', 'top_k=5 permanent default', 'ExperimentLog — 6 entries logged', 'DECISIONS.md — Decisions 5, 6, 7 recorded'] },
-  { num: 6, status: 'complete', title: 'Hybrid retrieval and reranking', desc: 'Upgraded the retrieval layer from TF-IDF standalone to a hybrid retrieval pipeline combining two complementary ranking methods with Reciprocal Rank Fusion reranking. Each returned chunk carries individual scores from both methods plus a combined ranking score — preserving full auditability on every retrieval decision. Resolved two regression bugs: a terminology normalization ordering rule and a fallback trigger that was suppressing substantive partial answers. Full eval pass confirmed 0 hallucinations across all three scenarios.', outputs: ['retrieve_bm25.py — BM25 standalone retriever', 'retrieve_hybrid.py — fusion reranking pipeline', 'Hybrid retriever wired into generate.py', 'Per-chunk audit scores — dual method + combined', 'TERM_MAP ordering rule — permanent maintenance rule', 'Fallback trigger tightened — exact phrase match', 'ExperimentLog — 3 entries logged', 'DECISIONS.md — Decisions 8, 9, 10 recorded', '0 hallucinations across all 3 scenarios'] },
-  { num: 7, status: 'complete', title: 'Evaluation framework and corpus expansion', desc: 'Built a structured 5-dimension evaluation rubric and scored the current system against it across 3 canonical scenarios. Expanded corpus from 5 to 8 documents (~2,867 chunks) by fully piping 3 new sources through the extract→clean→chunk→registry pipeline. Fixed 2 chunking bugs and surfaced a retrieval architecture gap — precedence-blind ranking allowing lower-priority sources to displace the Handbook. Engagement Gateway Enforcement scored 0.0 across all 3 scenarios — 100% failure rate confirming wiring priority. Git version control initialized.', outputs: ['fha_eval_w9_corpus_v1.xlsx — rubric, scores, scenario reference', 'corpus_v1 — 8 documents, ~2,867 chunks', 'build_chunk_registry.py', 'document_catalog.csv + source_priority.csv rebuilt', 'S1-S3 scored — all auto-blocked on engagement gate', 'DECISIONS.md — Decisions 11-20 recorded'] },
-  { num: 8, status: 'complete', title: 'Engagement gate and constraint flagging', desc: 'Wired the engagement validation gate as Step -1 in the pipeline — fail-closed, before classification runs — and the constraint flagging layer as Step 3.5, post-generation. Engagement gate enforces the system\'s own critical design rule: no path recommendation without verified borrower engagement evidence. Constraint flagging deployed two architecturally differentiated checks: a content-evaluating dual-tracking prohibition and a deterministic buyout threshold field check. Output wrapper fixed twice — fields were hardcoded empty and gate-failed cases were being labeled as success. S1-S4 re-scored: Engagement Gateway Enforcement moved from 0.0 to 1.0 across all three evaluation scenarios. All auto-blocks cleared.', outputs: ['engagement_validator.py — fail-closed gate, Step -1', 'borrower_engagement_rules.json v1.0 — ENG-001 through ENG-003', 'constraint_flagger.py — Step 3.5 post-generation', 'constraint_flagging_rules.json v1.0 — CFPB-001 and GNMA-001', 'output_wrapper.py — explicit status branching', 's1_s4_w11_rescore.json — canonical verified scenarios', 'ExperimentLog — 5 entries logged', 'DECISIONS.md — Decisions 21, 22, 23 recorded', 'Engagement Gateway Enforcement 0.0 → 1.0'] },
-  { num: 9, status: 'complete', title: 'Retrieval precedence and audit logging', desc: 'Closed three of the longest-standing architectural gaps in the system: retrieval precedence-awareness, immutable audit logging, and coverage-based output routing. Precedence tuning required six experiments to find a safe coefficient — the initial fix caused Handbook chunks to disappear entirely from production results at TOP_K=5, and the validation diagnostic was silently skipping query normalization, producing false confidence. Final weight (0.05) is safe against full S1-S4 regression but does not fully implement Decision 19\'s reranking goal — a fundamentally different mechanism is required and logged as Decision 27 for the next iteration. Audit logger built and verified: append-only, hash-chained JSONL, fail-closed, firing on three terminal states before output delivery. Coverage routing replaced a brittle single-phrase fallback check with a structured model-emitted marker (STATUS: FULL/PARTIAL/NONE) — closing a real defect where a case with genuine model-expressed incompleteness was routed as a full recommendation. Cross-program leakage (HECM content appearing in a forward-mortgage answer) closed by explicit prompt prohibition. S1-S5 full regression confirmed: 5/5 gate checks pass, audit chain valid at 19 entries, zero hallucinations maintained.', outputs: ['retrieve_hybrid.py — precedence-aware reranking (PRECEDENCE_WEIGHT=0.05)', 'diagnostics_precedence_weight.py — reusable weight sweep tool', 'audit_logger.py — append-only hash-chained JSONL, fail-closed', 'output_wrapper.py — coverage-status branching replacing phrase-match', 'generate.py — _parse_coverage_marker(), coverage_status/missing_summary', 'rag_answer_v3.txt + rag_answer_forbearance_v1.txt — structured coverage marker', 'run_block3_regression.py — S1-S5 regression suite', 'EXP-I9-001 through EXP-I9-012 logged', 'DECISIONS.md — Decisions 24-28 recorded', 'S1-S5 regression: 5/5 gate pass, audit chain valid, zero hallucinations'] },
-  { num: 10, status: 'active', title: 'Full orchestration layer and human-in-the-loop escalation', desc: 'Building a single governed pipeline entrypoint coordinating all stages — engagement validation, classification, query normalization, retrieval, prompt routing, generation, coverage parsing, numeric-fidelity checking, constraint flagging, audit logging, and output wrapping — replacing the current sequence scattered across generate.py and output_wrapper.py. Replacing manual_review_required\'s hardcoded True with logic driven by real pipeline state. Block 0 defines the escalation rule set as a logged decision before any code is written — same precedent as Decision 24 defining immutable before audit_logger.py was built. Two hardening additions at the same choke point: audit-lineage completeness check and a numeric-fidelity guardrail confirming model-stated figures appear verbatim in retrieved chunks.', outputs: ['pipeline_orchestrator.py — single governed entrypoint', 'manual_review_required — real escalation logic', 'escalation_reason field — reviewer-facing signal', 'Numeric-fidelity guardrail', 'Audit-lineage completeness check', 'Decision 30 — escalation rule set', 'S1-S5 regression through orchestrator'], wip: true },
+  { num: 1, status: 'complete', title: 'Use case definition and scope', desc: 'Defined the operational problem, inputs, outputs, risks, and MVP boundaries before any code existed. Established the decision framework: what the system must retrieve, what it must generate, what it must refuse, and where human review is mandatory.' },
+  { num: 2, status: 'complete', title: 'PDF extraction and retrieval pipeline', desc: 'Extracted and chunked the FHA Handbook and Mortgagee Letters into a searchable index. Built keyword-based retrieval returning ranked policy matches carrying document source, page number, section ID, and relevance score.' },
+  { num: 3, status: 'complete', title: 'Prompt design and answer generation', desc: 'Built compliance-safe prompt templates with citation enforcement and an insufficient-information fallback. Wired retrieval into generation so the system returns schema-compliant structured output rather than prose.' },
+  { num: 4, status: 'complete', title: 'Simple UI and output refinement', desc: 'Added a local browser interface so non-technical users could submit policy questions and receive cited answers. Expanded the corpus from two documents to five and introduced prompt version control.' },
+  { num: 5, status: 'complete', title: 'Scenario classification and prompt routing', desc: 'Added rules-based classification across hardship type, payment capacity, case status, and exceptions, wired directly into the generation pipeline. Introduced terminology normalization to close the gap between plain-language questions and FHA regulatory vocabulary.' },
+  { num: 6, status: 'complete', title: 'Hybrid retrieval and reranking', desc: 'Replaced single-method retrieval with two complementary ranking methods merged by rank fusion. Every returned chunk carries scores from both methods plus the combined rank, preserving auditability on each retrieval decision.' },
+
+  {
+    num: 7,
+    status: 'complete',
+    title: 'Evaluation framework and corpus expansion',
+    desc: 'Built a structured five-dimension evaluation rubric and scored the system against it across three canonical scenarios. Expanded the corpus from five documents to eight. The rubric immediately surfaced two problems that had been invisible without it. Engagement gateway enforcement scored zero across every scenario, confirming that the system had stated a critical design rule since the first iteration and had never enforced it. Retrieval ranking was found to be precedence-blind, meaning a lower-priority source could outrank the Handbook on keyword score alone. Supporting metadata was also found empty or malformed since the start of the project and was rebuilt.',
+    outputs: [
+      'Five-dimension evaluation rubric, scored across three scenarios',
+      'Corpus expanded from five documents to eight',
+      'Engagement gateway enforcement scored 0.0, a 100% failure rate',
+      'Retrieval precedence gap identified and logged (Decision 19)',
+      'Metadata found empty since project start, rebuilt (Decision 15)',
+      'Decisions 11 through 20 recorded'
+    ]
+  },
+  {
+    num: 8,
+    status: 'complete',
+    title: 'Engagement gate and constraint flagging',
+    desc: 'Wired the engagement validation gate as the first step in the pipeline, fail-closed and ahead of classification, enforcing the rule that no path recommendation is produced without verified borrower engagement evidence. Added constraint flagging after generation. The two constraint checks turned out to be architecturally different rather than parallel: one evaluates generated content against a prohibition, the other is a deterministic field comparison. That distinction was logged as a design finding rather than smoothed over. The output wrapper required two separate fixes, including one where cases blocked at the gate were being labeled as successful recommendations.',
+    outputs: [
+      'Engagement gate enforced fail-closed, ahead of classification',
+      'Engagement gateway enforcement moved from 0.0 to 1.0',
+      'Constraint checks confirmed architecturally non-symmetric (Decision 22)',
+      'Defect found and fixed: gate-blocked cases labeled as successes',
+      'Decisions 21, 22, and 23 recorded'
+    ]
+  },
+  {
+    num: 9,
+    status: 'complete',
+    title: 'Retrieval precedence and audit logging',
+    desc: 'Closed the two longest-standing architectural gaps in the system. Precedence tuning took six experiments. The first fix passed a manual test at a wide retrieval window and then removed Handbook results entirely from production output at the narrower window the pipeline actually uses. Rediagnosis found that the validation diagnostic itself had been skipping terminology normalization and producing false confidence. The final coefficient holds across full regression but does not fully achieve the original reranking goal, which was logged as an open decision rather than declared closed. Audit logging was specified before it was built: a decision defining what immutable means concretely came first, then an append-only hash-chained log that fires on three terminal states before any output is delivered and fails closed if it cannot write. Coverage routing replaced a brittle single-phrase check with a structured marker, closing a defect where a case the model had described as incomplete was routed as a full recommendation.',
+    outputs: [
+      'Immutable audit logging: append-only, hash-chained, fail-closed',
+      'Audit record written before delivery on all three terminal states',
+      'Definition of immutable logged as a decision before code was written',
+      'Precedence fix rediagnosed after production diverged from test results',
+      'Validation diagnostic found to be producing false confidence',
+      'Coverage routing replaced single-phrase fallback check',
+      'Cross-program content leakage closed by explicit prompt prohibition',
+      'Full regression: all gate checks pass, audit chain verified intact',
+      'Decisions 24 through 28 recorded'
+    ]
+  },
+  {
+    num: 10,
+    status: 'active',
+    title: 'Full orchestration layer and human-in-the-loop escalation',
+    desc: 'Building a single governed entrypoint that coordinates every stage of the pipeline in one place, replacing a sequence currently spread across two modules. Replacing the manual review flag, which has been hardcoded to true for the entire life of the project, with logic driven by actual pipeline state. As with immutable audit logging, the escalation rule set is being settled and logged as a decision before any code is written. Two hardening additions land at the same choke point: a check on whether the audit log captures the full lineage a regulated system needs, and a numeric-fidelity guardrail confirming that any figure the model states appears verbatim in the retrieved source text.',
+    outputs: [
+      'Single governed pipeline entrypoint',
+      'Manual review flag driven by real pipeline state',
+      'Escalation reason exposed alongside the flag',
+      'Numeric-fidelity guardrail',
+      'Audit lineage completeness check',
+      'Escalation rule set logged as a decision'
+    ],
+    wip: true
+  },
 ]
 
 
@@ -21,13 +77,13 @@ export default function Build() {
           <p className="section-label">Built in Public</p>
           <h1 className="section-title">The Build</h1>
           <p className="section-sub">
-            FHA Loss Mitigation AI Framework — built in public, one iteration at a time.
-            Every decision documented. Every output named.
+            FHA Loss Mitigation AI Framework. Built in public, one iteration at a
+            time. Every decision documented. Every output named.
           </p>
           <p className="build-value-statement">
-            Built to demonstrate what a compliance-aware AI system looks like when it's 
-            designed by someone who has spent 20 years operating inside the system it's 
-            meant to serve.
+            Built to demonstrate what a compliance-aware AI system looks like when it
+            is designed by someone who has spent 24 years operating inside the system
+            it is meant to serve.
           </p>
           <div className="epic-block">
   <p className="epic-label">EPIC</p>
@@ -36,13 +92,13 @@ export default function Build() {
   <div className="epic-section">
     <h3 className="epic-section-title">Problem Statement</h3>
     <p className="epic-body">
-      FHA loss mitigation decisions are governed by a complex, frequently updated 
-      policy framework spanning the HUD Handbook, active Mortgagee Letters, CFPB 
-      regulations, and Ginnie Mae guidelines. Servicers must evaluate borrower 
-      eligibility, engagement evidence, hardship type, and payment capacity against 
-      this framework — often under time pressure, with incomplete documentation, and 
-      without a reliable way to verify that the guidance being applied is current and 
-      correctly cited. Errors create compliance exposure, claim denials, and borrower 
+      FHA loss mitigation decisions are governed by a complex, frequently updated
+      policy framework spanning the HUD Handbook, active Mortgagee Letters, CFPB
+      regulations, and Ginnie Mae guidelines. Servicers must evaluate borrower
+      eligibility, engagement evidence, hardship type, and payment capacity against
+      this framework, often under time pressure, with incomplete documentation, and
+      without a reliable way to verify that the guidance being applied is current and
+      correctly cited. Errors create compliance exposure, claim denials, and borrower
       harm.
     </p>
   </div>
@@ -50,11 +106,11 @@ export default function Build() {
   <div className="epic-section">
     <h3 className="epic-section-title">Objective</h3>
     <p className="epic-body">
-      Design and build a compliance-aware retrieval-augmented generation system that 
-      retrieves policy guidance from indexed source documents, generates cited answers 
-      traceable to source, enforces borrower engagement validation before any path 
-      recommendation is made, flags downstream compliance constraints, and requires 
-      human review before any recommendation is acted on. Auditability and compliance 
+      Design and build a compliance-aware retrieval-augmented generation system that
+      retrieves policy guidance from indexed source documents, generates cited answers
+      traceable to source, enforces borrower engagement validation before any path
+      recommendation is made, flags downstream compliance constraints, and requires
+      human review before any recommendation is acted on. Auditability and compliance
       are first principles, not features added at the end.
     </p>
   </div>
@@ -62,27 +118,68 @@ export default function Build() {
   <div className="epic-section">
     <h3 className="epic-section-title">Build Intent</h3>
     <p className="epic-body">
-      This system was not built to become a production deployment. It was built because 
-      understanding how AI systems fail in regulated environments requires more than 
-      reading about them. Every architectural decision, every retrieval gap, every 
-      compliance constraint encountered during this build produced judgment that cannot 
-      be developed any other way. An AI Product Manager who has personally wired an 
-      engagement validation gate, debugged a fallback trigger, and scored hallucination 
-      risk against a compliance rubric brings something fundamentally different to AI 
+      This system was not built to become a production deployment. It was built
+      because understanding how AI systems fail in regulated environments requires
+      more than reading about them. An AI product manager who has specified an
+      engagement validation gate, watched it score zero against their own compliance
+      rubric, and driven it to full enforcement brings something different to AI
       product decisions than one who has only managed vendors who did those things.
     </p>
   </div>
 
   <div className="epic-section">
-    <h3 className="epic-section-title">Outcome</h3>
+    <h3 className="epic-section-title">How This Was Built</h3>
     <p className="epic-body">
-      A working AI triage copilot with a verified retrieval pipeline, rules-based 
-      classification, prompt routing, engagement validation gate, and constraint 
-      flagging — scored against a 5-dimension evaluation rubric across 4 canonical 
-      scenarios. Zero hallucinations maintained across all test scenarios. Engagement 
-      Gateway Enforcement moved from 0.0 to 1.0 across all three previously 
-      auto-blocked scenarios following gate wiring in Iteration 8. Retrieval 
-      precedence-awareness and immutable audit logging are the active build targets.
+      The architecture, requirements, evaluation criteria, scenario design, and every
+      logged decision on this project are mine. The implementation is written with AI
+      assistance, and the evaluation harness is run against it continuously.
+    </p>
+    <p className="epic-body">
+      That harness is the actual deliverable. A regression suite, a scored rubric,
+      and diagnostic tooling exist so that defects surface instead of shipping.
+      Several did: a precedence fix that removed Handbook results from production
+      entirely, a validation diagnostic that was skipping terminology normalization
+      and producing false confidence, and an output wrapper that labeled gate-blocked
+      cases as successes. A build without those checks would have demonstrated
+      cleanly and carried all three.
+    </p>
+    <p className="epic-body">
+      What is not automated is deciding what a surfaced defect means. The precedence
+      coefficient took six experiments because a value that resolved one scenario was
+      a curve-fit rather than a fix. That judgment, and the record of it, is the work.
+    </p>
+  </div>
+
+  <div className="epic-section">
+    <h3 className="epic-section-title">Evaluation Method</h3>
+    <p className="epic-body">
+      Scoring is manual, against a five-dimension rubric, across a fixed regression
+      set of scenarios cross-referenced to public source documents. Two limitations
+      are worth stating plainly. No ground-truth answer key exists yet, so results
+      are a smoke test rather than a measured accuracy figure. And the system
+      generating the output and the assistant scoring it are currently the same
+      model, which is a known source of favorable bias.
+    </p>
+    <p className="epic-body">
+      Both are being addressed: separating the grader from the generator, and
+      building a validated ground-truth set before the system sees it. An automated
+      evaluation framework was considered early and declined, because those tools
+      measure against ground truth that did not exist here. That decision reopens
+      when the ground truth does, not on a schedule.
+    </p>
+  </div>
+
+  <div className="epic-section">
+    <h3 className="epic-section-title">Current State</h3>
+    <p className="epic-body">
+      A working triage pipeline with hybrid retrieval, rules-based classification,
+      prompt routing, a fail-closed engagement validation gate, partial constraint
+      flagging, and immutable audit logging that writes before any output is
+      delivered. Nine iterations complete. Phase 3 is active: a governed orchestration
+      layer and real human-in-the-loop escalation logic, replacing a manual review
+      flag that has been hardcoded to true since the first iteration. Two constraint
+      categories remain unbuilt, the corpus needs a refresh against newer guidance,
+      and the system is not deployed. Those gaps are scheduled, not hidden.
     </p>
   </div>
 </div>
@@ -125,12 +222,7 @@ export default function Build() {
           <ul className="two-col-list">
             <li>Regulatory change management and Mortgagee Letter analysis</li>
             <li>Escrow analysis and exception management</li>
-            <li>Investor claims analysis and eligibility determination</li>
             <li>Loss draft disbursement workflow support</li>
-            <li>Customer service call support and real-time policy retrieval</li>
-            <li>Servicing system configuration guidance</li>
-            <li>Credit and investor reporting compliance</li>
-            <li>Operational performance and KPI frameworks</li>
           </ul>
           <p style={{ fontSize: '11px', color: 'var(--silver)', opacity: 0.5, marginTop: '16px', fontStyle: 'italic' }}>
             Extension domains are sequenced after the core framework is
