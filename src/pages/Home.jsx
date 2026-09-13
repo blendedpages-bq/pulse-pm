@@ -119,7 +119,7 @@ export default function Home() {
               <p className="card-body">
                 A compliance-aware RAG system for FHA loss mitigation policy
                 retrieval and triage support. Phase 3 governance and compliance
-                validation in progress. 9 iterations complete.
+                validation in progress. 10 iterations complete.
               </p>
               <a href="/portfolio" className="card-link">View the build and method →</a>
             </div>

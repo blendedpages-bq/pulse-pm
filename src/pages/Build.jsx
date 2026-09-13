@@ -52,16 +52,29 @@ const weeks = [
   },
   {
     num: 10,
-    status: 'active',
+    status: 'complete',
     title: 'Full orchestration layer and human-in-the-loop escalation',
-    desc: 'Building a single governed entrypoint that coordinates every stage of the pipeline in one place, replacing a sequence currently spread across two modules. Replacing the manual review flag, which has been hardcoded to true for the entire life of the project, with logic driven by actual pipeline state. As with immutable audit logging, the escalation rule set is being settled and logged as a decision before any code is written. Two hardening additions land at the same choke point: a check on whether the audit log captures the full lineage a regulated system needs, and a numeric-fidelity guardrail confirming that any figure the model states appears verbatim in the retrieved source text.',
+    desc: 'Built a single governed entrypoint that composes every already-verified pipeline stage rather than duplicating the sequence in a second location, a distinction that mattered later. Replaced the manual review flag, hardcoded to true for the entire life of the project, with logic driven by three separately decided rules: base coverage and engagement conditions, a consensus re-verification step, and an unconditional numeric-fidelity override. The consensus step exists because a full-coverage determination was found to disagree with itself across repeated calls on byte-identical input, closed by requiring three calls to agree before that result is trusted. The extraction work needed to build the entrypoint surfaced two defects before they reached production: a disagreement result silently fell through to a success path, and a numeric-fidelity check flagged a correctly cited figure over a grammatical variant rather than an error. The escalation rule set was logged as a decision before it was wired into code, the same practice used for immutable audit logging in the prior iteration. Documentation of what happens when review is required confirmed a real gap: no review interface exists yet, recorded rather than smoothed over.',
     outputs: [
-      'Single governed pipeline entrypoint',
-      'Manual review flag driven by real pipeline state',
-      'Escalation reason exposed alongside the flag',
-      'Numeric-fidelity guardrail',
-      'Audit lineage completeness check',
-      'Escalation rule set logged as a decision'
+      'Single governed pipeline entrypoint, composing verified stages rather than duplicating pipeline logic',
+      'Manual review flag driven by three rules: base coverage conditions, consensus re-verification, and a numeric-fidelity override',
+      'Coverage disagreement found across repeated calls on identical input, closed by requiring three-call agreement',
+      'Escalation reason exposed as a list, since a case can trigger more than one reason at once',
+      'Two defects found and fixed during the extraction itself, before reaching production',
+      'Escalation path documented, including an unresolved gap: no review interface exists yet',
+      'Decisions 30 through 34 recorded'
+    ]
+  },
+  {
+    num: 11,
+    status: 'active',
+    title: 'End-to-end validation and Handbook appendix gap',
+    desc: 'Full regression against the original five-dimension rubric with every governance safeguard now live. A Handbook citation gap deferred twice already is scheduled to close this iteration on its third and final attempt. A related classification gap, where delinquency stated as a payment count rather than a status phrase resolves to unknown, is scheduled alongside it. Whether the review-interface gap identified at the close of the prior iteration is resolved here or carried forward is still being decided.',
+    outputs: [
+      'Full regression scored against the original five-dimension rubric with every safeguard live',
+      'Handbook appendix citation gap closed on its third and final scheduled attempt',
+      'Classification gap resolved for delinquency stated as a payment count',
+      'Review-interface decision addressed or explicitly carried forward'
     ],
     wip: true
   },
