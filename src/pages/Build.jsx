@@ -67,14 +67,27 @@ const weeks = [
   },
   {
     num: 11,
-    status: 'active',
-    title: 'End-to-end validation and Handbook appendix gap',
-    desc: 'Full regression against the original five-dimension rubric with every governance safeguard now live. A Handbook citation gap deferred twice already is scheduled to close this iteration on its third and final attempt. A related classification gap, where delinquency stated as a payment count rather than a status phrase resolves to unknown, is scheduled alongside it. Whether the review-interface gap identified at the close of the prior iteration is resolved here or carried forward is still being decided.',
+    status: 'complete',
+    title: 'Corpus currency, chunking rewrite, and classification repair',
+    desc: 'A pre-scoring review found that five of eight indexed documents were no longer current authority, letting the system cite retired policy with a valid-looking citation — a failure the accuracy metric could not see, since it checked whether citations were real, not whether they were current. The corpus was rebuilt to three current documents behind a build gate that now verifies both supersession status and effective dates. Handbook chunking was rewritten to read each section identity from the page header, closing a citation gap deferred three times. Classification and terminology normalization were both repaired after each was found routing cases on the wrong signal.',
     outputs: [
-      'Full regression scored against the original five-dimension rubric with every safeguard live',
-      'Handbook appendix citation gap closed on its third and final scheduled attempt',
-      'Classification gap resolved for delinquency stated as a payment count',
-      'Review-interface decision addressed or explicitly carried forward'
+      'Five of eight documents found superseded or expired and serving as live authority; corpus rebuilt to three (Decision 36)',
+      'Handbook citation gap closed on its third and final attempt via header-driven parsing (Decision 37)',
+      'Classification and query normalization repaired to route on the correct signal (Decisions 38, 39)',
+      'Structural regression passed with all safeguards live; manual rubric scoring carried to Iteration 12',
+      'Decisions 36 through 40 recorded'
+    ]
+  },
+  {
+    num: 12,
+    status: 'active',
+    title: 'Escalation policy and honest evaluation baseline',
+    desc: 'Resolving the last governance question and scoring the rebuilt system honestly. The full-coverage state has never triggered across the project; rather than tune retrieval to force it, the system treats universal human review as designed behavior — FHA loss-mitigation determinations require human sign-off, so every case escalates with the specific policy gap named. Scenarios are then scored by hand against current source text and reported as they land.',
+    outputs: [
+      'Universal human review adopted as designed behavior, with escalation reasons named per case',
+      'Answer-truncation defect corrected so the reviewer sees the full coverage note',
+      'Scenarios scored by hand against current source text',
+      'Decisions recorded'
     ],
     wip: true
   },
