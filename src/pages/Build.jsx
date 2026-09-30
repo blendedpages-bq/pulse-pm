@@ -201,11 +201,11 @@ export default function Build() {
       A working triage pipeline with hybrid retrieval, rules-based classification,
       prompt routing, a fail-closed engagement validation gate, partial constraint
       flagging, and immutable audit logging that writes before any output is
-      delivered. Nine iterations complete. Phase 3 is active: a governed orchestration
-      layer and real human-in-the-loop escalation logic, replacing a manual review
-      flag that has been hardcoded to true since the first iteration. Two constraint
-      categories remain unbuilt, the corpus needs a refresh against newer guidance,
-      and the system is not deployed. Those gaps are scheduled, not hidden.
+      delivered. Eleven iterations complete. Phase 3 is active: resolving the
+      escalation policy and scoring the rebuilt system honestly against current
+      source text. The corpus was rebuilt after five of eight documents were found
+      serving as live authority for retired policy. Two constraint categories remain
+      unbuilt and the system is not deployed. Those gaps are scheduled, not hidden.
     </p>
   </div>
 </div>
