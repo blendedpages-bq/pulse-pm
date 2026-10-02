@@ -80,14 +80,34 @@ const weeks = [
   },
   {
     num: 12,
-    status: 'active',
+    status: 'complete',
     title: 'Escalation policy and honest evaluation baseline',
-    desc: 'Resolving the last governance question and scoring the rebuilt system honestly. The full-coverage state has never triggered across the project; rather than tune retrieval to force it, the system treats universal human review as designed behavior — FHA loss-mitigation determinations require human sign-off, so every case escalates with the specific policy gap named. Scenarios are then scored by hand against current source text and reported as they land.',
+    desc: 'Resolved the last governance question with evidence instead of assumption. The project record had stated that the full-coverage state never triggered. A review of the audit history found it had fired once, and that single automatic release cited four of five sources from documents superseded ten months earlier while passing every automated control. Universal human review was adopted as designed behavior on that evidence: coverage checks can tell whether retrieved text answers a question, not whether that text is still in force. Two defects were closed on the way: answers truncating before the reviewer saw the coverage note, and a fail-open routing path where an unrecognized result could reach the success branch. The test scenarios turned out to have gone stale the same way the corpus had, one asking about a retired option and one negative control that had silently become answerable, so every scenario was re-screened against current Handbook vocabulary before scoring. A proposed retrieval fix was then tested against acceptance criteria written before the test. It failed them, the hypothesis was rejected, and the failure pointed to the real cause.',
     outputs: [
-      'Universal human review adopted as designed behavior, with escalation reasons named per case',
-      'Answer-truncation defect corrected so the reviewer sees the full coverage note',
-      'Scenarios scored by hand against current source text',
-      'Decisions recorded'
+      'Audit history: the one automatic release cited 4 of 5 sources superseded ten months earlier',
+      'Universal human review adopted as designed behavior, with case-specific escalation reasons (Decision 41)',
+      'Answer truncation fixed with a completeness guard, zero truncations across the regression set',
+      'Fail-open routing closed: only an explicit full-coverage result reaches the success path (Decision 42)',
+      'Stale test scenarios found and rewritten against current Handbook vocabulary',
+      'New negative control refuses to apply FHA partial-claim rules to a VA question, reproduced three times',
+      'Hand-scored baseline: composites 3.5 to 4.5, every citation from a current document',
+      'Proposed retrieval fix rejected on criteria written before the test (Decision 43)',
+      'Section-level effective dates mapped: Handbook Update 18 changes mandatory November 10, 2026',
+      'Decisions 41 through 43 recorded'
+    ]
+  },
+  {
+    num: 13,
+    status: 'active',
+    title: 'Packaging and translation',
+    desc: 'The final iteration makes the system legible to people who will never read forty-three decisions. A review interface lets a viewer pick a case, see the loan record, and watch the governed pipeline produce an escalated triage package in pipeline order. Citations move to the printed Handbook page numbers an analyst actually uses. A single-case walkthrough, an architecture diagram, and a business case translate the governance record into what it means for servicing operations. The two unbuilt constraint categories are closed this iteration, built or formally descoped, not left as silent placeholders.',
+    outputs: [
+      'Review interface over the fixed regression scenarios',
+      'Citations on printed Handbook page numbers',
+      'Single-case walkthrough, end to end',
+      'Architecture diagram of the governed pipeline',
+      'Business case and production-ready README',
+      'Claims and reporting constraint categories closed'
     ],
     wip: true
   },
@@ -187,11 +207,15 @@ export default function Build() {
       model, which is a known source of favorable bias.
     </p>
     <p className="epic-body">
-      Both are being addressed: separating the grader from the generator, and
-      building a validated ground-truth set before the system sees it. An automated
-      evaluation framework was considered early and declined, because those tools
-      measure against ground truth that did not exist here. That decision reopens
-      when the ground truth does, not on a schedule.
+      Neither limitation is solved inside this build, and both are named as the
+      next steps rather than implied to be finished. In the meantime the process
+      guards against favorable bias in two ways: every score is confirmed or
+      overridden by me against the source document, and acceptance criteria for
+      any diagnostic test are written before the test runs, so the result cannot
+      be fitted to the hope. An automated evaluation framework was considered
+      early and declined, because those tools measure against ground truth that
+      did not exist here. That decision reopens when the ground truth does, not
+      on a schedule.
     </p>
   </div>
 
@@ -201,11 +225,13 @@ export default function Build() {
       A working triage pipeline with hybrid retrieval, rules-based classification,
       prompt routing, a fail-closed engagement validation gate, partial constraint
       flagging, and immutable audit logging that writes before any output is
-      delivered. Eleven iterations complete. Phase 3 is active: resolving the
-      escalation policy and scoring the rebuilt system honestly against current
-      source text. The corpus was rebuilt after five of eight documents were found
-      serving as live authority for retired policy. Two constraint categories remain
-      unbuilt and the system is not deployed. Those gaps are scheduled, not hidden.
+      delivered. Every case escalates to a human reviewer by design, with the
+      specific policy gap named. Twelve iterations complete, with an honest
+      hand-scored baseline against current source text. The final iteration is
+      active: packaging the system so it can be understood in two minutes. Two
+      constraint categories remain unbuilt and are closed this iteration. This is
+      a learning and portfolio build, not deployed and never run on real borrower
+      data. Gaps are recorded, not hidden.
     </p>
   </div>
 </div>
