@@ -98,18 +98,18 @@ const weeks = [
   },
   {
     num: 13,
-    status: 'active',
+    status: 'complete',
     title: 'Packaging and translation',
-    desc: 'The final iteration makes the system legible to people who will never read forty-three decisions. A review interface lets a viewer pick a case, see the loan record, and watch the governed pipeline produce an escalated triage package in pipeline order. Citations move to the printed Handbook page numbers an analyst actually uses. A single-case walkthrough, an architecture diagram, and a business case translate the governance record into what it means for servicing operations. The two unbuilt constraint categories are closed this iteration, built or formally descoped, not left as silent placeholders.',
+    desc: 'The final iteration made the system legible to people who will never read forty-five decisions. A review interface lets a viewer pick a case, see the loan record, run the governed pipeline once, and read the escalated triage package in pipeline order, with demo runs kept on a separate audit chain so they never mix with evaluation evidence. Citations now show the printed Handbook page an analyst actually uses beside the PDF page, checked against the Handbook\'s own page footers. The two unbuilt constraint categories were formally descoped rather than left as silent placeholders: the output says they were not checked and sends the case to review for that reason. A single-case walkthrough, an architecture diagram, a README, and a one-page business case translate the governance record into what it means for servicing operations. The visual check of the interface caught one more defect, compliance flags displayed as raw code, fixed the same day.',
     outputs: [
-      'Review interface over the fixed regression scenarios',
-      'Citations on printed Handbook page numbers',
-      'Single-case walkthrough, end to end',
-      'Architecture diagram of the governed pipeline',
-      'Business case and production-ready README',
-      'Claims and reporting constraint categories closed'
-    ],
-    wip: true
+      'Claims and reporting checks formally descoped: shown as not built and forcing review (Decision 44)',
+      'Citations carry printed and PDF Handbook pages, verified against printed footers 5 of 5',
+      'Review interface over the fixed regression scenarios, with a separate demo audit chain (Decision 45)',
+      'Every escalation reason shown in plain English; an unrecognized reason is shown, never hidden',
+      'Single-case walkthrough and architecture diagram of the governed pipeline',
+      'README and one-page business case, available on request',
+      'Decisions 44 and 45 recorded; project closed as v1.0'
+    ]
   },
 ]
 
@@ -222,16 +222,19 @@ export default function Build() {
   <div className="epic-section">
     <h3 className="epic-section-title">Current State</h3>
     <p className="epic-body">
-      A working triage pipeline with hybrid retrieval, rules-based classification,
-      prompt routing, a fail-closed engagement validation gate, partial constraint
-      flagging, and immutable audit logging that writes before any output is
-      delivered. Every case escalates to a human reviewer by design, with the
-      specific policy gap named. Twelve iterations complete, with an honest
-      hand-scored baseline against current source text. The final iteration is
-      active: packaging the system so it can be understood in two minutes. Two
-      constraint categories remain unbuilt and are closed this iteration. This is
-      a learning and portfolio build, not deployed and never run on real borrower
-      data. Gaps are recorded, not hidden.
+      Complete as v1.0 in October 2026, after thirteen iterations. A working
+      triage pipeline with hybrid retrieval, rules-based classification, prompt
+      routing, a fail-closed engagement validation gate, CFPB and Ginnie Mae
+      constraint flagging, and immutable audit logging that writes before any
+      output is delivered. Every case escalates to a human reviewer by design,
+      with the specific reasons named, and an honest hand-scored baseline stands
+      against current source text. A review interface, a single-case
+      walkthrough, an architecture diagram, and a business case make the system
+      understandable in minutes; the walkthrough and business case are available
+      on request. This is a learning and portfolio build, not deployed and never
+      run on real borrower data. Known gaps, including a Handbook table split
+      across a page break that retrieval still misses, are recorded in a
+      maintenance register rather than hidden.
     </p>
   </div>
 </div>
@@ -277,9 +280,8 @@ export default function Build() {
             <li>Loss draft disbursement workflow support</li>
           </ul>
           <p style={{ fontSize: '11px', color: 'var(--silver)', opacity: 0.5, marginTop: '16px', fontStyle: 'italic' }}>
-            Extension domains are sequenced after the core framework is
-            validated. No timelines are committed until the proof of concept
-            is complete.
+            The core framework is complete as a proof of concept. Extension
+            domains are not yet scheduled, and no timelines are committed.
           </p>
         </div>
       </section>

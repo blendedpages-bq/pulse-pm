@@ -2,7 +2,7 @@ import { Routes, Route, NavLink } from 'react-router-dom'
 import Home from './pages/Home'
 import Build from './pages/Build'
 import About from './pages/About'
-import Perspectives from './pages/Perspectives'
+
 
 function Nav() {
   return (
@@ -12,7 +12,7 @@ function Nav() {
         <ul className="nav-links">
           <li><NavLink to="/" end>Home</NavLink></li>
           <li><NavLink to="/portfolio">Portfolio</NavLink></li>
-          <li><NavLink to="/perspectives">Perspectives</NavLink></li>
+
           <li><NavLink to="/about">About</NavLink></li>
         </ul>
       </div>
@@ -44,7 +44,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/portfolio" element={<Build />} />
-        <Route path="/perspectives" element={<Perspectives />} />
+
         <Route path="/about" element={<About />} />
       </Routes>
       <Footer />

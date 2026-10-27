@@ -13,9 +13,8 @@ export default function Home() {
             Jarret Hayes is a mortgage servicing technology leader with 24 years of
             operational experience across the full servicing lifecycle, now designing
             AI systems for regulated environments. This site documents independent
-            research, an active AI build, and perspectives on leading technology in
-            regulated operations, written from inside the work rather than adjacent
-            to it.
+            research and a completed AI build in regulated operations, written from
+            inside the work rather than adjacent to it.
           </p>
 
           <div className="btn-row">
@@ -36,7 +35,7 @@ export default function Home() {
           <div className="stat-grid">
             <div className="stat-card">
               <div className="stat-label">Build Status</div>
-              <div className="stat-value">Phase 3 Active</div>
+              <div className="stat-value">v1.0 Complete</div>
             </div>
             <div className="stat-card">
               <div className="stat-label">Design Posture</div>
@@ -55,19 +54,18 @@ export default function Home() {
           <h2 className="section-title">What This Is</h2>
           <p className="body-text">
             A professional practice site for AI product systems work in regulated
-            environments. The portfolio documents one active AI build, framed as a
+            environments. The portfolio documents one AI build, framed as a
             product epic with a problem statement, objective, build intent, and
-            recorded outcomes. Perspectives will publish articles and frameworks on
-            AI product leadership, compliance-aware systems design, and developing
-            technology teams.
+            recorded outcomes.
           </p>
           <p className="body-text">
-            The current anchor project is an FHA loss mitigation AI triage copilot:
+            The anchor project is an FHA loss mitigation AI triage copilot:
             a compliance-aware retrieval-augmented generation system built
             independently against public FHA source documents and synthetic test
             scenarios. No borrower data is used and the system is not deployed. The
             build page documents the architecture, the evaluation method, and how
-            the system was built.
+            the system was built. The business case and a single-case walkthrough
+            are available on request.
           </p>
         </div>
       </section>
@@ -114,24 +112,16 @@ export default function Home() {
           <h2 className="section-title">Active Work</h2>
           <div className="card-grid">
             <div className="card">
-              <p className="epic-label">Portfolio — Active</p>
+              <p className="epic-label">Portfolio — v1.0 Complete</p>
               <h3 className="card-title">FHA Loss Mitigation AI Triage Copilot</h3>
               <p className="card-body">
                 A compliance-aware RAG system for FHA loss mitigation policy
-                retrieval and triage support. Phase 3 governance and compliance
-                validation in progress. 12 iterations complete.
+                retrieval and triage support. Completed October 2026 after 13
+                iterations: every case is checked for borrower engagement, cited
+                to current HUD and CFPB authority, audited, and routed to a human
+                reviewer with named reasons.
               </p>
               <a href="/portfolio" className="card-link">View the build and method →</a>
-            </div>
-            <div className="card">
-              <p className="epic-label">Perspectives — Coming Soon</p>
-              <h3 className="card-title">AI Product Leadership in Regulated Environments</h3>
-              <p className="card-body">
-                Articles and frameworks on compliance-aware AI systems design,
-                scoping AI proofs of concept, and developing technology teams
-                that can deliver in regulated operations.
-              </p>
-              <a href="/perspectives" className="card-link">View Perspectives →</a>
             </div>
           </div>
         </div>
@@ -141,8 +131,8 @@ export default function Home() {
         <div className="container">
           <h2 className="section-title">Follow the Work</h2>
           <p className="hero-sub">
-            The portfolio is updated as each iteration closes. Built in public means
-            the gaps, the pivots, and the decisions are all documented, not just the
+            The portfolio documents all 13 iterations. Built in public means the
+            gaps, the pivots, and the decisions are all documented, not just the
             wins.
           </p>
           <a href="/portfolio" className="btn-primary">View Portfolio</a>
